@@ -5,7 +5,7 @@ header-img: img/home-bg-code.jpg
 email: eyujin0118@gmail.com
 description: # "这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
 keyword: "Web, Java, SpringBoot, JPA, DB, MySQL"
-url: # your host, for absolute URL
+url: "https://cookieunnie.github.io" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
