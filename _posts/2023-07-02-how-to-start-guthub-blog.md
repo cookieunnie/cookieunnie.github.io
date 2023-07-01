@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "[Github 블로그] 블로그 시작하기"
@@ -34,13 +33,13 @@ https://github.com/topics/jekyll-theme
 
 선택한 템플릿을 클릭하면 아래 이미지처럼 해당 Repository에서 Fork할 수 있다.  
 
-![1](../img/in-post/post-how-to-start-github-blog/1.png)
+![1](/img/in-post/post-how-to-start-github-blog/1.png)
 
 
 
 Fork할때 원하는 Repository 명으로 바꿔줘도 되고 일단 만들고 나중에 수정해줘도 된다. 
 
-![2](../img/in-post/post-how-to-start-github-blog/2.png)
+![2](/img/in-post/post-how-to-start-github-blog/2.png)
 
 
 
@@ -56,9 +55,9 @@ Fork하면 내 Repository에서 아래 이미지처럼 만들어진 것을 확�
 
 하는게 아니라면 아직까지는 별다른 방법이 없어보인다 ㅠㅠ )
 
-![3](../img/in-post/post-how-to-start-github-blog/3.png)
+![3](/img/in-post/post-how-to-start-github-blog/3.png)
 
-![4](../img/in-post/post-how-to-start-github-blog/4.png)
+![4](/img/in-post/post-how-to-start-github-blog/4.png)
 
 
 
@@ -68,17 +67,17 @@ Fork하면 내 Repository에서 아래 이미지처럼 만들어진 것을 확�
 
 해당 파일을 클릭하면 github에서 바로 수정이 가능하다.
 
-![5](../img/in-post/post-how-to-start-github-blog/5.png)
+![5](/img/in-post/post-how-to-start-github-blog/5.png)
 
-![6](../img/in-post/post-how-to-start-github-blog/6.png)
+![6](/img/in-post/post-how-to-start-github-blog/6.png)
 
 
 
 내가 원하는 URL주소로 변경하고, Commit한다. 
 
-![7](../img/in-post/post-how-to-start-github-blog/7.png)
+![7](/img/in-post/post-how-to-start-github-blog/7.png)
 
-![8](../img/in-post/post-how-to-start-github-blog/8.png)
+![8](/img/in-post/post-how-to-start-github-blog/8.png)
 
 
 
@@ -128,7 +127,7 @@ _post 폴더가 없다면 생성해주고 마크다운 파일을 해당 폴더�
 
  아래 이미지와 같이 Add file > Create new file을 선택해주면, 파일을 생성할 수 있다.
 
-![9](../img/in-post/post-how-to-start-github-blog/9.png)
+![9](/img/in-post/post-how-to-start-github-blog/9.png)
 
 
 
@@ -146,11 +145,11 @@ https://jekyllrb-ko.github.io/docs/posts/
 
 포스팅은 아래와 같이 아래 위 `---` 로 감싸져있는 Header로 시작되어야하며, layout과 title 등을 입력하면 된다. 
 
-![10](../img/in-post/post-how-to-start-github-blog/10.png)
+![10](/img/in-post/post-how-to-start-github-blog/10.png)
 
 
 
 _config.yml 파일을 수정할 때와 같이 커밋하고 master 브랜치에 반영하면 포스팅 된 것을 확인할 수 있다. 
 
-![11](../img/in-post/post-how-to-start-github-blog/11.png)
+![11](/img/in-post/post-how-to-start-github-blog/11.png)
 
