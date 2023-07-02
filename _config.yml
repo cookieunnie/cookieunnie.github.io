@@ -75,7 +75,7 @@ kramdown:
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
 sidebar-about-description: "풀스택 개발자가 되고 싶은 <br> 주니어 개발자 <br> & <br> 고양이 쿠키를 키우고 있는 <br> 초보 집사"
-sidebar-avatar: https://cookieunnie.github.io/img/mini_about_me.jpeg #https://github.com/Huxpro.png # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/mini_about_me.jpeg #https://github.com/Huxpro.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: false #true # whether or not using Feature-Tags
