@@ -1,5 +1,7 @@
 ---
 layout: post
+categories : BLOG
+tags : Blog, GitHub, GitPages, Jekyll, Ruby
 title:  "[Github 블로그] 블로그 시작하기"
 ---
 
