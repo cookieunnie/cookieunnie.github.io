@@ -23,7 +23,7 @@ title:  "[Github 블로그] 블로그 시작하기"
 
 마음에 드는 템플릿을 아래 링크에서 하나 골라준다. 
 
-https://github.com/topics/jekyll-theme
+[https://github.com/topics/jekyll-theme](https://github.com/topics/jekyll-theme)
 
 
 
@@ -141,7 +141,7 @@ _posts 폴더가 없다면 입력란에 `_posts/` 를 입력해주면 된다.
 
 아래 링크에서 지킬 포스팅 Docs를 참고해보자. 
 
-https://jekyllrb-ko.github.io/docs/posts/
+[https://jekyllrb-ko.github.io/docs/posts/](https://jekyllrb-ko.github.io/docs/posts/)
 
 포스팅은 아래와 같이 아래 위 `---` 로 감싸져있는 Header로 시작되어야하며, layout과 title 등을 입력하면 된다. 
 
