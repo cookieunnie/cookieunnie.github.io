@@ -1,7 +1,7 @@
 # Site settings
 title: 유진 Blog
 SEOTitle: Yujin's Blog | Many a mickle makes a muckle
-header-img: img/home-bg-code.jpg
+header-img: img/bg-my-cookie.jpeg
 email: eyujin0118@gmail.com
 description: # "这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
 keyword: "Web, Java, SpringBoot, JPA, DB, MySQL"
@@ -59,10 +59,10 @@ kramdown:
       start_line: 1
 
 # Disqus settings
-disqus_username: yujin #hux
+#disqus_username: yujin #hux
 
 # Netease settings
-netease_comment: false
+#netease_comment: false
 
 # Analytics settings
 # Baidu Analytics
@@ -74,8 +74,8 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "풀스택 개발자가 되고 싶은 <br> 주니어 개발자"
-sidebar-avatar: img/mini_about_me.jpeg #https://github.com/Huxpro.png # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "풀스택 개발자가 되고 싶은 <br> 주니어 개발자 <br> & <br> 고양이 쿠키를 키우고 있는 <br> 초보 집사"
+sidebar-avatar: https://cookieunnie.github.io/img/mini_about_me.jpeg #https://github.com/Huxpro.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: false #true # whether or not using Feature-Tags
