@@ -87,7 +87,7 @@ $ rbenv rehash
 
 
 
-### 2. Bundler 설치하기
+## 2. Bundler 설치하기
 
 Ruby 설치가 끝났다면, Bundler를 설치해준다. 
 
@@ -97,7 +97,7 @@ $ gem install bundler
 
 
 
-### 3. Jekyll 설치하기
+## 3. Jekyll 설치하기
 
 jekyll을 아래의 명령어로 설치해준다. 
 
