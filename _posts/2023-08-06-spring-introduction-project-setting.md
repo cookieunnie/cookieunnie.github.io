@@ -1,8 +1,8 @@
 ---
 layout: post
 categories : Spring
-tags : Framework Spring Inflean  
-title:  "[Spring] 스프링 입문 - 프로젝트 환경설정"
+tags : Framework Spring Inflean Note
+title:  "[강의노트] 스프링 입문 - 프로젝트 환경설정"
 ---
 
 # 프로젝트 생성
