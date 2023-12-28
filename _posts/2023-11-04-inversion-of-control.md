@@ -1,7 +1,7 @@
 ---
 layout: post
 categories : Spring
-tags : Spring IoC
+tags : Spring 
 title:  "[Spring] IoC(Inversion of Control)란?"
 ---
 
@@ -58,7 +58,7 @@ B 라는 객체가 Spring Container에게 관리되고 있는 Bean이라면 @Aut
 
 ### DI(Dependency Injection)
 각 클래스 간의 의존관계를 Bean Definition 정보를 바탕으로 컨테이너가 자동으로 연결해주는 것
-- Setter Insection (수정자 주입)
+- Setter Injection (수정자 주입)
 - Contructor Injection (생성자 주입)
 - Method Injection (필드 주입)
 
