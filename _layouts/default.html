@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% if page.use_math %}
+  {% include mathjax_support.html %}
+{% endif %}
 {% include head.html %}
 
 <!-- hack iOS CSS :active style -->
