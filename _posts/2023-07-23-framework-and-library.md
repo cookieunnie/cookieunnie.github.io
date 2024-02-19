@@ -1,7 +1,7 @@
 ---
 layout: post
-categories : Spring
-tags : Framework Library Spring Inteview 
+categories : Interview
+tags : Framework Library Interview 
 title:  "[Spring] Framework와 Library의 차이점, 그리고 Framework"
 ---
 
