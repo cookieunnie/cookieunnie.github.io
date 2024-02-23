@@ -150,8 +150,41 @@ public class ArrayListConversion{
 }
 ```
 
+## Integer ArrayList를 int 배열로 변환할 경우
+int와 같은 primitive 타입은 toArray()를 사용할 수 없다.  
+따라서 아래와 같은 방법으로 변환할 수 있다.    
+```java
+public static voic main(String args[]){
+    List<Integer> list = new ArrayList<>(); 
+    list.add(1); 
+    list.add(2); 
+    list.add(3);
 
+    // 방법 1
+    int[] arr1 = new int[list.size()];
+    for(int i=0; i<list.size(); i++){
+        arr[i] = list.get(i).intValue();
+    }
 
+    // 방법 2
+    // 자바가 자동으로 각 요소의 Integer -> int형으로 unboxing해준다. 
+    int[] arr2 = list.stream()
+                .mapToInt(i -> i)
+                .toArray(); 
+
+    // 방법 3
+    //intValue 메서드를 통해 Integer -> int형으로 변경해준다. 
+    int[] arr3 = list.stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+
+    // 방법 4
+    int[] arr4 = list.stream()
+                .filter(i -> i != null)
+                .mapToInt(i -> i)
+                .toArray();
+}
+```
 <br><br><br>
 
 
