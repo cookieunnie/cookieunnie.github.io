@@ -78,6 +78,25 @@ s = s.replaceFirst("o", "5");
 System.out.println(s); // Hell5 World
 ```
 
+# 메서드 요약 
+
+## 포함 여부를 검사하는 메서드 
+
+|메서드|반환형|내용|
+|:---|:---|:---|
+|contains(CharSequence s)|boolean|전달받은 문자열이 원본 문자열에 있는지 검사| 
+|startsWith(String prefix)|boolean|원본 문자열이 전달받은 문자열로 시작하는지 검사|
+|endsWith(String suffix)|boolean|원본 문자열이 전달받은 문자열로 끝나는지 검사|
+|indexOf(String s)|int|전달받은 문자열이 원본 문자열에서 몇번째 인덱스에 있는지 검사|
+
+<br>
+
+## 문자열 치환 메서드 
+
+|메서드|반환형|내용|
+|:---|:---|:---|
+|replace(char oldChar, char newChar)|String|원본 문자열의 oldChar문자들을 newChar문자로 치환한 문자열을 반환|
+|replace(CharSequence target, CharSequence replacement)|String|원본 문자열에서 등장하는 target 문자열을 replacement문자열로 치환해서 반환| 
 
 <br> 
 
