@@ -4,7 +4,6 @@ categories : CS
 tags : Java CS
 use_math: true
 title:  "[CS] 디자인 패턴 #1"
-published : false
 ---
 
 디자인 패턴이란?
@@ -39,7 +38,7 @@ A가 B에 의존성이 있다 = B의 변경 사항에 대해 A도 변해야 한�
 
 ### 1.3.1 의존성 주입의 장점 
 모듈들을 쉽게 교체할 수 있는 구조가 되어 테스팅과 마이그레이션이 쉬워진다.   
-구현할 때 추상화 레이어를 넣고 이를 기반으로 구현체를 넣어주기 때문에 애플리케이션 의존성 방향이 일관되고, 쉽게 추론할 수 있으며, 모듈 같의 관계들이 더 명확해진다. 
+구현할 때 추상화 레이어를 넣고 이를 기반으로 구현체를 넣어주기 때문에 애플리케이션 의존성 방향이 일관되고, 쉽게 추론할 수 있으며, 모듈 간의 관계들이 더 명확해진다. 
 
 ### 1.3.2 의존성 주입의 단점
 모듈들이 더욱더 분리되므로 클래스 수가 늘어나 복잡성이 증가할 수 있고 약간의 런타임 페널티가 생기기도 한다. 
@@ -249,4 +248,175 @@ public class Main{
 ```
 
 # 4. 옵저버 패턴
+주체가 어떤 객체의 상태 변화를 관찰하다가 상태 변화가 있을 때마다 메서드 등을 통해 옵저버 목록에 있는 옵저버들에게 변화를 알려주는 디자인 패턴.    
+
+주체 : 객체의 상태 변화를 보고 있는 관찰자     
+옵저버 : 객체의 상태 변화에 따라 전달되는 메서드 등을 기반으로 '추가 변화 사항'이 생기는 객체들을 의미함.    
+
+주체와 객체를 따로 두지 않고 상태가 변경되는 객체를 기반으로 구축하기도 함. 
+옵저버 패턴을 활용한 서비스로는 트위터가 있음.    
+=> 내가 어떤 사람인 주체를 '팔로우'했다면 주체가 포스팅을 올리게 되면 알림이 '팔로워'에게 감.     
+
+옵저버 패턴은 주로 이벤트 기반 시스템에 사용하며 MVC 패턴에도 사용됨.    
+주체라고 볼 수 있는 모델에서 변경 사항이 생겨 update() 메서드로 옵저버인 뷰에 알려주고 이를 기반으로 컨트롤러 등이 작동함.  
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+interface Subject{
+    public void register(Observer obj);
+    public void unregister(Observer obj);
+    public void notifyObservers();
+    public Object getUpdate(Observer obj);
+}
+
+interface Observer{
+    public void update();
+}
+
+class Topic implements Subject{
+    private List<Observer> observers;
+    private String message;
+
+    public Topic(){
+        this.observers = new ArrayList<>();
+        this.message = "";
+    }   
+
+    @Override
+    public void register(Observer obj){
+        if(!observers.contains(obj)) observers.add(obj);
+    }
+
+    @Override
+    public void unregister(Observer obj){
+        observers.remove(obj);
+    }
+
+    @Override
+    public void notifyObservers(){
+        this.observers.forEach(Observer::update);
+    }
+
+    @Override
+    public Object getUpdate(Observer obj){
+        return this.message;
+    }
+
+    public void postMessage(String msg){
+        System.out.println("Message sended to Topic: " + msg);
+        this.message = msg;
+        nofifyObservers();
+    }
+}
+
+class TopicSubscriber implements Observer{
+    private String name;
+    private Subject topic;
+
+    public TopicSubscriber(String name, Subject topic){
+        this.name = name;
+        this.topic = topic;
+    }
+
+    @Override 
+    public void update(){
+        String msg = (String) topic.getUpdate(this);
+        System.out.println(name + ":: got message >> " + msg);
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        Topic topic = new Topic();
+        Observer a = new TopicSubscriber("a", topic);
+        Observer b = new TopicSubscriber("b", topic);
+        Observer c = new TopicSubscriber("c", topic);
+        topic.register(a);
+        topic.register(b);
+        topic.register(c);
+
+        topic.postMessage("amumu is op champion!!");
+    }
+}
+
+/*
+Message sended to Topic : amumu is op champion!!
+a:: got message >> amumu is op champion!!
+b:: got message >> amumu is op champion!!
+c:: got message >> amumu is op champion!!
+*/
+```
+
+topic을 기반으로 옵저버 패턴을 구현한 예제.    
+topic : 주체이자 객체.    
+
+## 자바 : 상속과 구현 
+예제 코드에 나온 자바의 상속과 구현의 특징과 차이.    
+
+**상속** 
+상속은 자식 클래스가 부모 클래스의 메서드 등을 상속받아 사용하며 자식 클래스에서 추가 및 확장을 할 수 있는 것.     
+재사용성, 중복성의 최소화.   
+
+**구현**
+구현은 부모 인터페이스를 자식 클래스에서 재정의하여 구현하는 것.    
+상속과 달리 반드시 부모 클래스의 메서드를 재정의하여 구현해야함.    
+
+**상속과 구현의 차이**
+상속은 일반 클래스, abstract 클래스를 기반으로 구현하며,    
+구현은 인터페이스를 기반으로 구현함.    
+
+
 # 5. 프록시 패턴과 프록시 서버 
+## 5.1 프록시 패턴
+프록시 패턴은 대상 객체에 접근하기 전 그 접근에 대한 흐름을 가로채 대상 객체 앞단의 인터페이스 역할을 하는 디자인 패턴.    
+이를 통해 객체의 속성, 변환 등을 보완하며 보안, 데이터 검증, 캐싱, 로깅에 사용함.    
+프록시 객체로 쓰이기도 하지만 프록시 서버로도 활용됨.    
+
+## 5.2 프록시 서버 
+프록시 서버는 서버와 클라이언트 사이에서 클라이언트가 자신을 통해 다른 네트워크 서비스에 간접적으로 접속할 수 있게 해주는 컴퓨터 시스템이나 응용 프로그램.   
+
+### 5.2.1 프록시 서버로 쓰는 nginx
+nginx는 비동기 이벤트 기반의 구조와 다수의 연결을 효과적으로 처리 가능한 웹 서버이며, 주로 Node.js 서버 앞단의 프록시 서버로 활용됨.    
+이를 통해 익명 사용자가 직접적으로 서버에 접근하는 것을 차단하고, 간접적으로 한 단계를 더 거치게 만들어서 보안을 강화할 수 있음.   
+
+### 5.2.2 프록시 서버로 쓰는 CloudFlare
+CloudFlare는 전 세계적으로 분산된 서버가 있고 이를 통해 어떠한 시스템의 콘텐츠 전달을 빠르게 할 수 있는 CDN 서비스.   
+웹 서버 앞단에 프록시 서버로 두어 DDOS 공격 방어나 HTTPS 구축에 쓰임.    
+서비스 배포 이후 의심스러운 트래픽이 많이 발생하면 이때문에 많은 클라우드 서비스 비용이 발생할 수도 있는데, 이때 CloudFlare가 의심스러운 트래픽인지 먼저 판단해 CAPTCHA 등을 기반으로 이를 일정 부분 막아주는 역할도 수행함.    
+
+- CDN(Content Delivery Network)   
+각 사용자가 인터넷에 접속하는 곳과 가까운 곳에서 콘텐츠를 캐싱 또는 배포하는 서버 네트워크를 말함. 이를 통해 사용자가 웹 서버로부터 콘텐츠를 다운로드하는 시간을 줄일 수 있음. 
+
+- DDOS 공격 방어    
+DDOS는 짧은 기간 동안 네크워크에 많은 요청을 보내 네트워크를 마비시켜 웹 사이트의 가용성을 방해하는 사이버 공격 유형.    
+CloudFlare는 의심스러운 트래픽, 특히 사용자가 접속하는 것이 아닌 시스템을 통해 오는 트래픽을 자동으로 차단해서 DDOS 공격으로부터 보호함. CloudFlare의 거대한 네트워크 용량과 캐싱 전략으로 소규모 DDOS 공격은 쉽게 막아낼 수 있으며 이러한 공격에 대한 방화벽 대시보드도 제공함. 
+
+- HTTPS 구축   
+서버에서 HTTPS를 구축할 때 인증서를 기반으로 구축할 수도 있음. 하지만 CloudFlare를 사용하면 별도의 인증서 설치 없이 좀 더 손쉽게 HTTPS를 구축할 수 있음.  
+
+### 5.2.3 CORS와 프론트엔드의 프록시 서버
+CORS(Cross-Origin Resource Sharing)는 서버가 웹 브라우저에서 리소스를 로드할 때 다른 오리진을 통해 로드하지 못하게 하는 HTTP 헤더 기반 메커니즘.   
+프론트엔드 개발시 프론트엔더 서버를 만들어서 백엔드 서버와 통신할 때 주로 CORS 에러를 마주치는데, 이를 해결하기 위해 프론트엔드에서 프록시 서버를 만들기도 함.   
+
+- 오리진   
+프로토콜과 호스트 이름, 포트의 조합.   
+예를 들어, https://kundol.com:12010/test 라는 주소에서 오리진은 https://kundol.com:12010을 뜻한다. 
+
+예를 들어 프론트엔드에서는 127.0.0.1:3000으로 테스팅을 하는데 백엔드 서버는 127.0.0.1:12010이라면 포트 번호가 다르기 때문에 CORS 에러가 남. 이때 프록시 서버를 둬서 프론트엔드 서버에서 요청되는 오리진을 127.0.0.1:12010으로 바꾸는 것. 
+CORS 에러도 해결되고, 다양한 API 서버와의 통신도 매끄럽게 할 수 있음.   
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+이 포스팅은 책 '면접을 위한 CS 전공지식 노트 (주홍철)'를 참고하였습니다. 
