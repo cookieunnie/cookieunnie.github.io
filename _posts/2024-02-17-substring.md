@@ -4,6 +4,7 @@ categories : Java
 tags : Java
 use_math: true
 title:  "[Java] 문자열 자르기 (substring)"
+published : false
 ---
 코딩테스트를 낮은 난이도부터 차근히 풀면서 아마 가장 많이 사용했던 메서드가 substring이 아니였나싶다.    
 이 또한 시간이 지나면 특히 인덱스까지 포함이 되어 잘렸는지 아니였는지 헷갈릴 것이 분명하므로 남겨두려 한다.      

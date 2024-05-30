@@ -4,6 +4,7 @@ categories : Java
 tags : Java
 use_math: true
 title:  "[Java] 2진수와 10진수 변환하기"
+published : false
 ---
 코딩테스트 문제를 풀다가 String타입으로 받은 이진수의 합을 구하는 부분에서 알게된 내용을 정리하고자 한다.   
 거의 메모에 가까운 포스팅이 될 것 같지만, toBinaryString을 분명 Binary뭐더라 할 것이 분명하므로 한 번 적어보고자 한다.   

@@ -4,6 +4,7 @@ categories : Java
 tags : Java
 use_math: true
 title:  "[Java] 진법 바꾸기"
+published : false
 ---
 
 # 문자열과 정수를 변환하는 메서드 
