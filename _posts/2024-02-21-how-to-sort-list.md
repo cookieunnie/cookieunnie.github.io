@@ -4,6 +4,7 @@ categories : Java
 tags : Java
 use_math: true
 title:  "[Java] 리스트 정렬하기"
+published : false
 ---
 
 # Collections.sort()

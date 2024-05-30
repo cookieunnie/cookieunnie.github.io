@@ -4,6 +4,7 @@ categories : Java
 tags : Java
 use_math: true
 title:  "[Java] Char를 Int로 변환하기"
+published : false
 ---
 String -> Int를 더 자주 변환했었다보니 가끔 Char -> Int 변환 때 알쏭달쏭할때가 있었으므로   
 오늘은 Char를 Int로 변환하는 방법에 대해 정리해보고자 한다.       
